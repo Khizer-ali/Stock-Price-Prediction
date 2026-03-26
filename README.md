@@ -1,4 +1,3 @@
-# Stock-Price-Prediction
 # Stock Price Prediction using XGBoost
 
 A machine learning project that predicts Microsoft (MSFT) stock prices using XGBoost regression with technical indicators and walk-forward validation.
