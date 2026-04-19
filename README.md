@@ -24,6 +24,20 @@ This project implements a **time-series forecasting system** to predict the next
 - **XGBoost Regressor** for predictive modeling
 - **Walk-forward validation** for realistic performance evaluation
 
+### Workflow Diagram
+
+```mermaid
+graph TD
+    A["Data Collection (yfinance)"] --> B["Data Preprocessing"]
+    B --> C["Calculate Technical Indicators (finta)"]
+    C --> D["Feature Engineering (Target Variable)"]
+    D --> E["Train-Test Split (Walk-Forward Validation)"]
+    E --> F["Model Training (XGBoost Regressor)"]
+    F --> G["Hyperparameter Tuning (GridSearchCV)"]
+    G --> H["Model Evaluation (RMSE, MAPE)"]
+    H --> I["Predictions & Visualization"]
+```
+
 ### Key Features:
 ✅ Automatic technical indicator calculation  
 ✅ Hyperparameter tuning using GridSearchCV  
@@ -137,10 +151,10 @@ This prevents **data leakage** and provides realistic performance estimates.
 
 ```bash
 # Clone or download the project
-cd stock-price-prediction
+cd Stock-Price-Prediction
 
 # Install dependencies
-pip install pandas numpy matplotlib yfinance finta xgboost scikit-learn
+pip install -r requirements.txt
 
 # Run the notebook
 jupyter notebook Stock_price_prediction.ipynb
